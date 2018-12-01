@@ -1,9 +1,10 @@
 # coding:utf-8
-x = int(input())
 case_num = 1
 
-while TRUE:
+while True:
+    x = int(input())
     if x == 0:
         break
-    print('Case {}: {}'.format(case_num, x))
-    case_num += 1
+    else:
+        print('Case {}: {}'.format(case_num, x))
+        case_num += 1
