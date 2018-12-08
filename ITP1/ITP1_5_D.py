@@ -18,5 +18,5 @@ for i in range(1,n+1):
                 break
             # x = x / 10(整数)と同じ
             x //= 10
-# 最後に開業
+# 最後に改行
 print()
