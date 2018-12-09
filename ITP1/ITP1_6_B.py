@@ -1,6 +1,6 @@
 # coding:utf-8
 n = int(input())
-card = [[False]*14 for i in range(4)]
+card = [[False]*13 for i in range(4)]
 suits = ['S', 'H', 'C', 'D']
 
 #print(card)
