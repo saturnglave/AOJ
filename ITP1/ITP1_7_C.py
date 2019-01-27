@@ -2,7 +2,7 @@
 r, c = map(int, input().split())
 table_input = [[0]*(c) for i in range(r)]
 table_ans = [[0]*(c+1) for i in range(r+1)]
-print(table_input)
+#print(table_input)
 
 # table settings
 for i in range(r):
@@ -22,5 +22,8 @@ for i in range(r+1):
             table_ans[r][j] = 0
 
 
+for j in range(c+1):
+    for i in range(r+1):
+        table_ans[r][j] += table_ans[i][j]
 
 print(' '.join(map(str, table_ans)))
