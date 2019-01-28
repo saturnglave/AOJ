@@ -21,9 +21,14 @@ for i in range(r+1):
         elif i == r and j < c:
             table_ans[r][j] = 0
 
-
-for j in range(c+1):
-    for i in range(r+1):
+# 列の和を求める
+for j in range(c):
+    for i in range(r):
         table_ans[r][j] += table_ans[i][j]
+
+#行列全体の和を求める
+for j in range(c):
+    table_ans[r][c] += table_ans[r][j]
+
 
 print(' '.join(map(str, table_ans)))
