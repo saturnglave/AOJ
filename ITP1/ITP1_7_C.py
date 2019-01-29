@@ -8,7 +8,7 @@ table_ans = [[0]*(c+1) for i in range(r+1)]
 for i in range(r):
     table_input[i] = list(map(int, input().split()))
 
-print(table_input)
+#print(table_input)
 
 
 # 計算とテーブル穴埋め
@@ -30,5 +30,6 @@ for j in range(c):
 for j in range(c):
     table_ans[r][c] += table_ans[r][j]
 
-
-print(' '.join(map(str, table_ans)))
+#出力
+for i in range(r+1):
+    print(' '.join(map(str, table_ans[i])))
