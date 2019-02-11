@@ -1,11 +1,15 @@
 # coding: utf-8
-import numpy as np
 n,m,l = map(int,input().split())
 
-A = np.array([input().split() for i in range(n)])
-B = np.array([input().split() for i in range(m)])
+A = [list(map(int, input().split())) for i in range(n)]
+B = [list(map(int, input().split())) for i in range(m)]
+C = [[0]*l for i in range(n)]
 
-C = np.dot(A, B)
+for i in range(n):
+    for j in range(l):
+        for k in range(m):
+            C[i][j] += B[k][j]*A[i][k]
 
-for i in range(m):
-    print(' '.join(map(str, C[m])))
+
+for i in range(n):
+    print(' '.join(map(str, C[i])))
