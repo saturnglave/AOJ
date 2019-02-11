@@ -9,4 +9,4 @@ for l in sys.stdin:
 sentence = ''.join(text).lower()
 
 for ltr in string.ascii_lowercase:
-    print('{}:{}'.format(ltr, sentence.count(ltr)))
+    print('{} : {}'.format(ltr, sentence.count(ltr)))
