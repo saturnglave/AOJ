@@ -12,4 +12,6 @@ int main(){
     s = s % 60;
 
     cout << h << ":" << m << ":" << s << endl;
+
+    return 0;
 }
