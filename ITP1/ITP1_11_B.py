@@ -17,19 +17,52 @@ class Dice:
         else:
             self.d[0], self.d[2], self.d[5], self.d[3] = self.d[2], self.d[5], self.d[3], self.d[0]
 
+    # 右の面を求める
+    def right_side(self, up, front):
+        if ((up == self.d[0] and front == self.d[1]) or (up == self.d[1] and front == self.d[5]) or 
+        (up == self.d[5] and front == self.d[4]) or (up == self.d[4] and front == self.d[0])):
+            return self.d[2]
+
+        elif ((up == self.d[3] and front == self.d[1]) or (up == self.d[4] and front == self.d[3]) or 
+        (up == self.d[2] and front == self.d[4]) or (up == self.d[1] and front == self.d[2])):
+            return self.d[0]
+
+        elif ((up == self.d[3] and front == self.d[5]) or (up == self.d[5] and front == self.d[2]) or 
+        (up == self.d[2] and front == self.d[0]) or (up == self.d[0] and front == self.d[3])):
+            return self.d[1]
+
+        elif ((up == self.d[4] and front == self.d[5]) or (up == self.d[5] and front == self.d[1]) or 
+        (up == self.d[1] and front == self.d[0]) or (up == self.d[0] and front == self.d[4])):   
+            return self.d[3]
+
+        elif ((up == self.d[2] and front == self.d[5]) or (up == self.d[5] and front == self.d[3]) or 
+        (up == self.d[3] and front == self.d[0]) or (up == self.d[0] and front == self.d[2])):   
+            return self.d[4]    
+        
+        else:
+            return self.d[5]         
 
 
 def main():
     num = [int(i) for i in input().split()]
     q = int(input())
-    direction = str(input())
+
+    #direction = str(input())
     #print(num)
     #print(direction)
     dice = Dice(num)
 
+    for j in range(q):
+        up, front = map(int, input().split())
+        ans = dice.right_side(up, front)
+        print(ans)
+
+        
+'''
+    #ITP1_11_Aの部分なので略
     for i in direction:
         dice.rotate(i)
     print(dice.d[0])
-
+'''
 if __name__ == "__main__":
     main()
