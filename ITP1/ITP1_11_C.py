@@ -42,8 +42,23 @@ class Dice:
         else:
             return self.d[5]
 
-        #サイコロが同一か判断する
-        def is_same_dice(self, )
+    #サイコロが同一か判断する
+    def is_same_dice(self, dice, direction):
+        ret = False
+
+        for i in range(len(direction)):
+            self.rotate(direction[i])
+            flag = True
+            for j in range(6):
+                if self.d[j] != dice.d[j]:
+                    print(self.d[j], dice.d[j])
+                    flag = False
+                    break
+            if flag == True:
+                return True
+
+        return ret
+
 
 
 def main():
@@ -51,11 +66,17 @@ def main():
     num2 = [int(i) for i in input().split()]
     #q = int(input())
 
-    #direction = str(input())
+    direction = 'NNNNWNNNWNNNENNNENNNWNNN'
     #print(num)
     #print(direction)
     dice1 = Dice(num1)
     dice2 = Dice(num2)
+
+    if dice1.is_same_dice(dice2, direction):
+        print("Yes")
+    else:
+        print("No")
+
 '''
     #ITP1_11_Bの部分なので略
     for j in range(q):
